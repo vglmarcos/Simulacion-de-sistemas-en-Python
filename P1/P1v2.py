@@ -23,20 +23,18 @@ if __name__ == "__main__":
 
         #preparando los datos
         n = replicas * dimensiones
-        resultados_manhattan = [resultados[0][i] for i in range(0, n)]
-        resultados_euclideana = [resultados[0][i] for i in range(n, n * 2)]
-        info_manhattan = [(probabilidad, dim) for (probabilidad, dim, _) in resultados_manhattan]
-        info_euclideana = [(probabilidad, dim) for (probabilidad, dim, _) in resultados_euclideana]
+        info_manhattan = [resultados[0][i] for i in range(0, n)]
+        info_euclideana = [resultados[0][i] for i in range(n, n * 2)]
         datos_manhattan = {"Dimension":[x[1] for x in info_manhattan], "Probabilidad":[x[0] for x in info_manhattan]}  
         datos_euclideana = {"Dimension":[x[1] for x in info_euclideana], "Probabilidad":[x[0] for x in info_euclideana]}
-        dataframe_manhattan = pd.DataFrame(datos_manhattan)
-        dataframe_euclideana = pd.DataFrame(datos_euclideana)
+        df_manhattan = pd.DataFrame(datos_manhattan)
+        df_euclideana = pd.DataFrame(datos_euclideana)
 
         #plot
         sns.set(style = "darkgrid")
         fig, axs = plt.subplots(1, 2, sharey=True)
-        sns.boxplot(x = "Dimension", y = "Probabilidad", data = dataframe_manhattan, ax = axs[0], palette = "GnBu_d")
-        sns.boxplot(x = "Dimension", y = "Probabilidad", data = dataframe_euclideana, ax = axs[1], palette = "BuGn_r")
+        sns.boxplot(x = "Dimension", y = "Probabilidad", data = df_manhattan, ax = axs[0], palette = "GnBu_d")
+        sns.boxplot(x = "Dimension", y = "Probabilidad", data = df_euclideana, ax = axs[1], palette = "BuGn_r")
         axs[0].set_title("Manhattan")
         axs[1].set_title("Euclideana")
         axs[0].set_xlabel('Dimensión')
