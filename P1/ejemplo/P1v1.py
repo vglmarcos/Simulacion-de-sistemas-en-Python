@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from caminataV1 import caminata
+from caminatav1 import caminata
 from distancias import manhattan, euclideana
 from multiprocessing import Pool, cpu_count
 import seaborn as sns
