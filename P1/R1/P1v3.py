@@ -31,7 +31,7 @@ if __name__ == "__main__":
         #plot
         limite = 1000
         step = 100
-        sns.set(style = "darkgrid")
+        sns.set(style = "whitegrid")
         plt.ylim(top = limite, bottom = 0)
         plt.yticks([i for i in range(0, limite + 1, step)])
         ax = sns.boxplot(x = "Pasos", y = "Tiempo", data = df, palette = "GnBu_d")
