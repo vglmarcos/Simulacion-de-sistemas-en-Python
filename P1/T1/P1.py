@@ -45,4 +45,4 @@ if __name__ == "__main__":
         plt.yticks(np.arange(0, 1.1, 0.1))
         plt.savefig(f'{pasos}pasos.png')
         plt.close()
-        print(f"terminando {pasos} pasos");
+        print(f"terminando {pasos} pasos")
